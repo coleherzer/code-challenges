@@ -85,7 +85,7 @@ duplicateEncode('(( @')
 function toWeirdCase (string) {
     var arrOfWords = string.split(' ')
     //console.log(arr)
-    console.log(arrOfWords)
+    //console.log(arrOfWords)
 
     var alteredArray = [];
 
@@ -119,7 +119,7 @@ function toWeirdCase (string) {
     }
 
     var finalString = alteredArray.join('')
-    console.log(finalString)
+    //console.log(finalString)
     return finalString;
 
 
@@ -234,3 +234,47 @@ toWeirdCase("familiarity")
 //     var finalString = alteredArray.join('')
 
 //     return finalString;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Strings of two characters each
+
+function solution(str) {
+   var arr = str.split('')
+    console.log(arr)
+
+    strLength = arr.length
+
+    finalArray = []
+
+    if (strLength % 2 == 0) {
+        for (let i = 0; i < arr.length; i+=2) {
+            newString = arr[i] + arr[i + 1]
+            console.log(newString)
+            finalArray.push(newString)
+        }
+    } else {
+        for (let i = 0; i < arr.length; i+=2) {
+            if (i < arr.length - 1) {
+                newString = arr[i] + arr[i + 1]
+                console.log(newString)
+                finalArray.push(newString)
+            } else {
+                newString = arr[i] + '_'
+                console.log(newString)
+                finalArray.push(newString)
+            }
+        }
+    }
+
+    console.log(finalArray)
+
+
+}
+
+solution('abc') // should return ['ab', 'c_']
+solution('abcdef') // should return ['ab', 'cd', 'ef']
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
