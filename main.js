@@ -24,7 +24,7 @@ function duplicateEncode(word){
     //   }
     // }
 
-    console.log(obj)
+    //console.log(obj)
     // gives us an object of all the counts
     
 
@@ -77,3 +77,160 @@ duplicateEncode('(( @')
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Weird String Case
+// function that changes characters at even indexes to upper case
+// characters at ood indexes are lower case
+// NOTE: only alphabetic characters and single spaces
+
+function toWeirdCase (string) {
+    var arrOfWords = string.split(' ')
+    //console.log(arr)
+    console.log(arrOfWords)
+
+    var alteredArray = [];
+
+    // arrOfWords.forEach((word) => {
+    //     var arr = word.split('')
+    //     for(let i = 0; i < arr.length; i++) {
+    //         if(i % 2 == 0) {
+    //             alteredArray.push(arr[i].toUpperCase())
+    //         } else {
+    //             alteredArray.push(arr[i].toLowerCase())
+    //         }
+    //     }
+    //     if (arrOfWords.length > 1) {
+    //         alteredArray.push(' ')
+    //     }
+    // })
+
+    // needed to do it this way so I could add the last condition on line 116 so there wouldnt be spaces at end
+    for(let j = 0; j < arrOfWords.length; j ++) {
+        var arr = arrOfWords[j].split('')
+        for(let i = 0; i < arr.length; i++) {
+            if(i % 2 == 0) {
+                alteredArray.push(arr[i].toUpperCase())
+            } else {
+                alteredArray.push(arr[i].toLowerCase())
+            }
+        }
+        if (arrOfWords.length > 1 && j < (arrOfWords.length - 1)) {
+            alteredArray.push(' ')
+        }
+    }
+
+    var finalString = alteredArray.join('')
+    console.log(finalString)
+    return finalString;
+
+
+    //ALL ATTEMPTS
+
+    // for(let i = 0; i < arr.length; i++) {
+    //     var fakeIndex;
+    //     // if we're on the first one, or the last position wasnt a space, continue as normal
+    //     if(i == 0 || (arr[i-1] !== ' ')) {
+    //         if(i % 2 == 0) {
+    //             alteredArray.push(arr[i].toUpperCase())
+    //         } else {
+    //             alteredArray.push(arr[i].toLowerCase())
+    //         }
+    //     // if the last position was a space, and the current index is EVEN
+    //     } else if (arr[i - 1] == ' ' && i % 2 == 0) {
+    //         //if(i % 2 == 0) {
+    //         alteredArray.push(arr[i].toUpperCase())
+    //         //} else {
+    //         //    alteredArray.push(arr[i].toLowerCase())
+    //         //}
+    //     } else if (arr[i - 1] == ' ' && i % 2 !== 0) {
+    //         fakeIndex = 2
+    //         if(fakeIndex % 2 == 0) {
+    //             alteredArray.push(arr[i].toUpperCase())
+    //         }
+    //     }
+
+    //     //console.log(i)
+    //     // var index = i
+    //     // if (arr[i] == ' ') {
+    //     //     // want index to = something NOT even
+    //     //     //index = 1
+    //     //     // also want to make sure the index after the space IS even
+
+    //     //     if(index % 2 == 0) {
+    //     //         alteredArray.push(arr[index].toUpperCase())
+    //     //     } else {
+    //     //         alteredArray.push(arr[index].toLowerCase())
+    //     //     }
+    //     // } 
+        
+    //     // else if (index % 2 == 0) {
+    //     //     alteredArray.push(arr[i].toUpperCase())
+    //     // } else {
+    //     //     alteredArray.push(arr[i].toLowerCase())
+    //     // }
+
+    //     // 4 lines below are what I originally had that makes function work with single word strings
+    //     // if(index % 2 == 0) {
+    //     //     alteredArray.push(arr[index].toUpperCase())
+    //     // } else {
+    //     //     alteredArray.push(arr[index].toLowerCase())
+    //     // }
+
+
+    //     // if its not a space, execute the block below
+    //     // if(index % 2 == 0) {
+    //     //     alteredArray.push(arr[index].toUpperCase())
+    //     // } else {
+    //     //     alteredArray.push(arr[index].toLowerCase())
+    //     // }
+
+    //     // if it is a space
+    //     // 
+
+    //     // if its a space, and its odd were fine (next index will be even anyways)
+    //     // if (arr[i] == ' ' && ((arr[i] % 2) !== 0)) {
+    //     //     // want index to = something NOT even
+    //     //     //index = 1
+    //     //     // also want to make sure the index after the space IS even
+
+    //     //     if(index % 2 == 0) {
+    //     //         alteredArray.push(arr[index].toUpperCase())
+    //     //     } else {
+    //     //         alteredArray.push(arr[index].toLowerCase())
+    //     //     }
+    //     // } 
+    //     // if its a space, and the index is EVEN, we want to make sure the next index is EVEN again somehow
+        
+    // }
+    
+    // //console.log(alteredArray)
+    // var finalString = alteredArray.join('')
+    // console.log(finalString)
+    // return finalString;
+
+    // END OF ATTEMPTS
+}
+
+
+toWeirdCase("Yo dUde")
+toWeirdCase("this is a tESt")
+toWeirdCase("WAAAAzzzzzzZZuppPPp")
+toWeirdCase("does This WorkK")
+
+toWeirdCase("familiarity")
+
+// original attempt (wrong for multiple word strings)
+// var arr = string.split('')
+
+//     var alteredArray = [];
+
+//     for(let i = 0; i < arr.length; i++) {
+//         if(i % 2 == 0) {
+//             alteredArray.push(arr[i].toUpperCase())
+//         } else {
+//             alteredArray.push(arr[i].toLowerCase())
+//         }
+//     }
+    
+//     var finalString = alteredArray.join('')
+
+//     return finalString;
