@@ -322,4 +322,50 @@ function goodVsEvil(good, evil) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Simple Pig Latin
 
+function pigIt(str) {
+    var words = str.split(' ')
+
+    //letters.includes(/^[A-Za-z]+$/)
+    var pigged = []
+
+    words.forEach((word) => {
+        var letters = word.split('')
+        if (letters.length == 1 && letters[0] !== /^[A-Za-z]+$/) {
+            letters.push(word[0])
+            letters.splice(word[0], 1)
+            var pigWord = letters.join('')
+            pigged.push(pigWord)
+        } else {
+            letters.push(word[0])
+            letters.splice(word[0], 1)
+            letters.push('ay')
+            var pigWord = letters.join('')
+            pigged.push(pigWord)
+        }
+        // var letters = word.split('')
+        // letters.push(word[0])
+        // letters.splice(word[0], 1)
+        // letters.push('ay')
+        // var pigWord = letters.join('')
+        // pigged.push(pigWord)
+    })
+
+    var piggedString = ''
+
+    for(let i = 0; i < pigged.length; i++) {
+        if (i < pigged.length -1) {
+            piggedString = piggedString + pigged[i] + ' '
+        } else {
+            piggedString = piggedString + pigged[i]
+        }
+        
+    }
+
+    console.log(piggedString)
+
+}
+
+pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+pigIt('Hello world !');     // elloHay orldWay !
