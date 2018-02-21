@@ -272,9 +272,54 @@ function solution(str) {
 
 }
 
-solution('abc') // should return ['ab', 'c_']
-solution('abcdef') // should return ['ab', 'cd', 'ef']
+//solution('abc') // should return ['ab', 'c_']
+//solution('abcdef') // should return ['ab', 'cd', 'ef']
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Lord of the Rings ---- Good vs Evil
+
+// my quick attempt
+/* function goodVsEvil(good, evil){
+    good.split(' ')
+    console.log(good[0])
+    var goodWorth;
+    for(let i = 1; i < 6; i++) {
+        var number = good[i]
+        goodWorth = number 
+    }
+
+    evil.split(' ')
+    console.log(evil[0])
+    var evilWorth;
+    for(let i = 1; i < 6; i++) {
+        evil[i]
+    }
+  
+} */
+
+// a really awesome way to do it
+function goodVsEvil(good, evil) {  
+    var getWorth = function( side, worth ) {
+      return side.split(' ').reduce( function(result, value, index) { 
+        return result + (worth[index] * value);
+      }, 0);
+    }
+    // need to go look at some videos for a better understanding of reduce
+  
+    var result = getWorth( good, [1,2,3,3,4,10] ) - getWorth( evil, [1,2,2,2,3,5,10] );
+  
+    return result > 0 ? "Battle Result: Good triumphs over Evil" :
+           result < 0 ? "Battle Result: Evil eradicates all trace of Good" :
+                        "Battle Result: No victor on this battle field";
+}
+
+
+//goodVsEvil('1 1 1 1 1 1', '1 1 1 1 1 1 1')
+//goodVsEvil('0 0 0 0 0 10', '0 1 1 1 1 0 0')
+//goodVsEvil('1 0 0 0 0 0', '1 0 0 0 0 0 0')
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
