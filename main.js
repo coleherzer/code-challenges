@@ -15,6 +15,7 @@ function duplicateEncode(word){
             obj[character] = 1
         }
     })
+    
     // for (let i = 0; i <= arrOfChars.length; i++) {
     //   if (obj.hasOwnProperty(arrOfChars[i])) {
     //     obj[arrOfChars[i]] += 1
@@ -119,7 +120,9 @@ function toWeirdCase (string) {
     }
 
     var finalString = alteredArray.join('')
+    
     //console.log(finalString)
+
     return finalString;
 
 
