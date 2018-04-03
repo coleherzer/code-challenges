@@ -370,5 +370,26 @@ function pigIt(str) {
 
 }
 
-pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
-pigIt('Hello world !');     // elloHay orldWay !
+//pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+//pigIt('Hello world !');     // elloHay orldWay !
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Feasts Beasts exercise
+
+function feast(beast, dish) {
+    if(beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]) {
+        return true
+    } else {
+        return false
+    }
+}
+
+//console.log(feast("great blue heron", "garlic naan"))
+//console.log(feast("chickadee", "chocolate cake"))
+//console.log(feast("brown bear", "bear claw"))
+//console.log(feast("deer", "fruit"))
+
+///////////////////////////////////////////////////////////////////////////////////
+
