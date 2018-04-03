@@ -393,3 +393,43 @@ function feast(beast, dish) {
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+// Camel Case Method
+
+// String.prototype.camelCase=function(){
+//     String.split(" ")
+// }
+
+function camelCase(str) {
+    var words = str.split(' ')
+    // console.log(words)
+
+    var cameledWords = []
+
+    words.forEach((word) => {
+        var letters = word.split('')
+        var changedLetter = letters[0].toUpperCase()
+        // console.log(changedLetter)
+        letters.splice(0, 1, changedLetter)
+        // console.log(letters)
+        var cameledWord = letters.join('')
+        //console.log('cameled word is ', cameledWord)
+        cameledWords.push(cameledWord)
+
+        // console.log(cameledWords)
+    })
+
+    //console.log(cameledWords)
+
+    var cameledStr = cameledWords.join('')
+
+    return cameledStr
+}
+
+console.log(camelCase("hello world"))
+console.log(camelCase("whats for dinner man"))
+console.log(camelCase("lunch time is soon"))
+console.log(camelCase("cole"))
+console.log(camelCase("Cole Herzer"))
+
+///////////////////////////////////////////////////////////////////////////////////
+
