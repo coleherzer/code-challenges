@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+      *{font-family: Arial, Helvetica, sans-serif;}
+      
+      .chownow-order-online {
+        text-align: center;
+        background: #FD4F57;
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        padding: 10px 40px;
+        border-radius: 5px;
+        box-shadow: 1px 1px black;
+      }
+      
+      .chownow-order-online:hover {
+        background: black;
+      }
+      
+      .center {
+        text-align: center;
+      }
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+      1. Create a chownow ordering button (anchor) using HTML and CSS (Classes) with the following specifications:
+      <ul>
+        <li>x Centered horizontally</li>
+        <li>x Red button (hex: FD4F57)</li>
+        <li>x White text</li>
+        <li>No text decoration</li>
+        <li>x Font size: 22px</li>
+        <li>x Button size 10px from the top and bottom of text and 40px for sides</li>
+        <li>x Rounded Corners</li>
+        <li>x Shadow</li>
+        <li>x Hoverstate: changes button color to black</li>
+        <li>x Link: https://ordering.chownow.com/order/1/locations</li>
+        <li>x Class should be ‘chownow-order-online’</li>
+        <li>x Text: ORDER ONLINE</li>
+      </ul>
+
+    <div style="margin-top: 50px; margin-bottom: 50px;" class='center'>
+      <!-- Solution Here: --> 
+      <a href='https://ordering.chownow.com/order/1/locations' class='chownow-order-online'>ORDER ONLINE</a>
+   </div>
+
+    <div style="margin-bottom: 20px">
+      <strong>
+        For the next two questions discuss your problem solving process.
+        Discuss your solution before searching the internet for implementation help.
+        Please do not use search for complete solutions.
+      </strong>
+    </div>
+
+    <div style="margin-bottom: 20px">
+      2. Using JS or jQuery: From this set of numbers produce the 3 largest numbers in order. <br>
+      First discuss your strategy without google/stack overflow help. <br>
+      Google/Stack overflow may be used after solution discussion.
+    </div>
+
+
+    First Test:
+    [5, 45, 32, 56, 1, 9, 10, 22, 11, 105, 16, 95, 2, 42]<br>
+    Output: [105, 95, 56]<br><br>
+
+    Second Test:
+    [-5, -45, -32, -56, -1, -9, -10, -22, -11, -105, -16, -95, 0, 42]<br>
+    Output: [42, 0, -1]
+
+    <div style="margin-top: 50px; margin-bottom: 50px;">
+      <div id='Test1'> </div>
+      <div id='Test2'> </div>
+    </div>
+
+
+    <script>
+
+      // Solution Here:
+      var firstTest = [5, 45, 32, 56, 1, 9, 10, 22, 11, 105, 16, 95, 2, 42]
+      var secondTest = [-5, -45, -32, -56, -1, -9, -10, -22, -11, -105, -16, -95, 0, 42]
+
+    function largestThree(arr) {
+        var currentLargest = arr[0]
+        var largestIndex;
+        var newArr = [];
+
+        arr.forEach((item, index) => {
+            if(currentLargest < item) {
+                currentLargest = item
+                largestIndex = index
+            }
+        })
+        //console.log('first largest is: ', currentLargest)
+
+        newArr.push(currentLargest)
+
+        arr.splice(largestIndex, 1)
+
+        //console.log('original array is: ', arr)
+        var updatedArr = arr
+        //console.log('first updated array is: ', updatedArr)
+
+        currentLargest = updatedArr[0]
+        largestIndex = 0
+
+        updatedArr.forEach((item, index) => {
+            if(currentLargest < item) {
+                currentLargest = item
+                largestIndex = index
+            }
+        })
+
+        //console.log('second largest is: ', currentLargest)
+
+        newArr.push(currentLargest)
+
+        //console.log('new arr is: ' + newArr)
+
+        arr.splice(largestIndex, 1)
+
+        //console.log(arr)
+        var updatedArr = arr
+        //console.log('second updated array is: ', updatedArr)
+
+        currentLargest = updatedArr[0]
+        largestIndex = 0
+
+        updatedArr.forEach((item, index) => {
+            if(currentLargest < item) {
+                currentLargest = item
+                largestIndex = index
+            }
+        })
+
+        //console.log('third largest is: ', currentLargest)
+
+        newArr.push(currentLargest)
+
+        //console.log('new arr is: ' + newArr)
+
+        return newArr
+
+    }
+
+    // testing this way works too
+    //console.log(largestThree(firstTest))
+    //console.log(largestThree(secondTest))
+
+
+      $("#Test1").html(largestThree(firstTest).toString())
+      $("#Test2").html(largestThree(secondTest).toString())
+
+    </script>
+
+    3. You are integrating the ChowNow Widget to this programmatically generated navigation menu.
+    Using JS or jQuery add a new list item <strong>after</strong> ‘contact’ that links to Hudson’s Online Ordering
+    (https://ordering.chownow.com/order/1/locations).
+
+    <ul class='widget-exercise'>
+      <li id="menu-item123"> <a href="home.html">Home</a></li>
+      <li id="menu-item244"> <a href="news.html">News</a></li>
+      <li id="menu-item484"> <a href="contact.html">Contact</a></li>
+      <li id="menu-item454"> <a href="about1.html">About</a></li>
+    </ul>
+
+    <script>
+    //Solution Here:
+        $('#menu-item484').append("<li id='menu-item834'> <a href='https://ordering.chownow.com/order/1/locations'>Hudson's Online Ordering</a></li>")
+
+    </script>
+
+
+  </body>
+</html>
